@@ -1,0 +1,23 @@
+{
+    "Navigation": {
+        "home": "Home",
+        "contacts": "Contacts",
+        "articles": "Articles"
+    },
+    "Home": {
+        "title": "Home"
+    },
+    "Articles": {
+        "title": "Articles"
+    },
+    "Contacts": {
+        "title": "Contacts"
+    },
+    "Manifest": {
+        "title": "Title"
+    },
+    "LocaleSwitcher": {
+        "en": "English",
+        "uk": "Ukrainian"
+    }
+}

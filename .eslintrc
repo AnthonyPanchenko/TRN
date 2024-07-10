@@ -1,0 +1,251 @@
+{
+  // Configuration for JavaScript files
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/all",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "React": true,
+    "JSX": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2022,
+    "project": [
+      "./tsconfig.json"
+    ],
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "import",
+    "unused-imports",
+    "@typescript-eslint"
+  ],
+  "root": true,
+  "rules": {
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "singleQuote": true,
+    //     "endOfLine": "auto"
+    //   }
+    // ], // Avoid conflict rule between Prettier and Airbnb Eslint
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/unbound-method": "error",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-unsafe-enum-comparison": "off",
+    "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+    "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "parameter",
+        "modifiers": [
+          "unused"
+        ],
+        "format": [
+          "strictCamelCase"
+        ],
+        "leadingUnderscore": "require"
+      }
+    ],
+    "default-case": "error",
+    "no-await-in-loop": "error",
+    "no-implied-eval": "error",
+    "no-unneeded-ternary": "error",
+    "require-await": "error",
+    "import/no-extraneous-dependencies": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-closing-tag-location": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-leaked-render": "off",
+    "react/jsx-no-literals": "off",
+    "react/jsx-newline": "off",
+    "react/jsx-max-depth": [
+      "error",
+      {
+        "max": 6
+      }
+    ],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "allowArrowFunctions": true
+      }
+    ],
+    "react/jsx-first-prop-new-line": [
+      "error",
+      "multiline-multiprop"
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeClosing": "never"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "destructuredArrayIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "react/hook-use-state": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-array-index-key": "warn",
+    "react/no-unused-prop-types": "warn",
+    "no-unsafe-optional-chaining": "error",
+    "function-paren-newline": [
+      "error",
+      "multiline-arguments"
+    ],
+    "import/extensions": "off", // Avoid missing file extension errors, TypeScript already provides a similar feature
+    "react/function-component-definition": "off", // Disable Airbnb's specific function type
+    "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+    "react/require-default-props": "off", // Allow non-defined react props as undefined
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "no-nested-ternary": "off",
+    "no-plusplus": "off",
+    "react/forbid-component-props": "off",
+    "react/prefer-read-only-props": "off",
+    "react/prefer-stateless-function": [
+      "error",
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/prop-types": "off",
+    "max-params": [
+      "error",
+      {
+        "max": 4
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 190
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": {
+          "multi": 1,
+          "single": 3
+        }
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ], // Overrides Airbnb configuration and enable no-restricted-syntax
+    "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+    "unused-imports/no-unused-imports": "error",
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "prefer-arrow-callback": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "external",
+          "internal"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "unused-imports/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "18"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "paths": "./tsconfig.json",
+        "alwaysTryTypes": true
+      }
+    }
+  }
+}
+// Configuration for testing
+// {
+//   "files": ["**/*.test.ts", "**/*.test.tsx"],
+//   "plugins": ["vitest", "jest-formatting", "testing-library", "jest-dom"],
+//   "extends": [
+//     "plugin:vitest/recommended",
+//     "plugin:jest-formatting/recommended",
+//     "plugin:testing-library/react",
+//     "plugin:jest-dom/recommended"
+//   ]
+// },
+// Configuration for e2e testing (Playwright)
+// {
+//   "files": ["**/*.spec.ts"],
+//   "extends": ["plugin:playwright/recommended"]
+// },
+// Configuration for Storybook
+// {
+//   "files": ["*.stories.*"],
+//   "extends": ["plugin:storybook/recommended"],
+//   "rules": {
+//     "import/no-extraneous-dependencies": [
+//       "error",
+//       {
+//         "devDependencies": true
+//       }
+//     ]
+//   }
+// }

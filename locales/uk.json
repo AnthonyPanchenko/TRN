@@ -1,0 +1,23 @@
+{
+    "Navigation": {
+        "home": "Головна",
+        "contacts": "Контакти",
+        "articles": "Статті"
+    },
+    "Home": {
+        "title": "Головна"
+    },
+    "Articles": {
+        "title": "Статті"
+    },
+    "Contacts": {
+        "title": "Контакти"
+    },
+    "Manifest": {
+        "title": "Заголовок"
+    },
+    "LocaleSwitcher": {
+        "en": "Англійська",
+        "uk": "Українська"
+    }
+}

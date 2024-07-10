@@ -1,0 +1,96 @@
+@media screen and (max-width: $breakpoint-xl) {
+  :root {
+    --font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  :root {
+    --font-size: 12px;
+  }
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+p,
+a {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  p,
+  a {
+    font-size: 1.4rem;
+  }
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+#root {
+  isolation: isolate;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  align-items: center;
+}
+
+.card {
+  border-radius: var(--cards-border-radius);
+  box-shadow: -2px 2px 11px 3px var(--box-shadow-color);
+  backdrop-filter: blur(17.8px);
+  border: 1px solid var(--border-color);
+  padding: var(--space-xl);
+  max-width: 1500px;
+  width: 100%;
+}
+
+.field-control {
+  padding: 0.6em;
+  background-color: var(--input-fields-bg-color);
+  color: inherit;
+  width: 100%;
+  font-size: var(--controls-font-size);
+  height: var(--controls-height);
+  border: 1px solid var(--border-color);
+  border-radius: var(--fields-border-radius);
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
+
+  &:focus-visible {
+    outline-color: var(--picton-blue-color);
+    outline-style: solid;
+    outline-offset: 1px;
+    outline-width: 2px;
+  }
+}
