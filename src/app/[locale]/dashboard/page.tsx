@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
+
+const DashboardApp = dynamic(() => import('../../../DashboardApp'), {
+  ssr: false,
+});
+
 export default function Dashboard() {
   return (
     <main className="some">
-      <article>
-        <h1>Dashboard</h1>
-      </article>
+      <DashboardApp />
     </main>
   );
 }

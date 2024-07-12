@@ -2,7 +2,8 @@
     "Navigation": {
         "home": "Home",
         "contacts": "Contacts",
-        "articles": "Articles"
+        "articles": "Articles",
+        "dashboard": "Dashboard"
     },
     "Home": {
         "title": "Home"
@@ -12,6 +13,9 @@
     },
     "Contacts": {
         "title": "Contacts"
+    },
+    "Dashboard": {
+        "title": "Dashboard"
     },
     "Manifest": {
         "title": "Title"

@@ -1,4 +1,4 @@
-import type { Pathnames, LocalePrefix } from 'next-intl/routing';
+import type { LocalePrefix, Pathnames } from 'next-intl/routing';
 
 import { LocaleCodes } from './constants/localization';
 
@@ -7,9 +7,9 @@ export const locales = Object.values(LocaleCodes);
 
 export const pathnames: Pathnames<typeof locales> = {
   '/': '/',
-  '/home/[gameId]': {
-    [LocaleCodes.EN]: '/home/[gameId]',
-    [LocaleCodes.UK]: '/home/[gameId]',
+  '/game/[gameId]': {
+    [LocaleCodes.EN]: '/game/[gameId]',
+    [LocaleCodes.UK]: '/game/[gameId]',
   },
   '/articles': {
     [LocaleCodes.EN]: '/articles',

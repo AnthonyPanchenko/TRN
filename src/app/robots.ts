@@ -5,8 +5,15 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: 'Googlebot',
-        allow: ['/'],
-        disallow: '/private/',
+        allow: [
+          '/',
+          '/sections/*',
+          '/posts/*',
+          '/users/*',
+          '/login',
+          '/register',
+        ],
+        disallow: ['/dashboard/*', '/posts/*/edit'],
       },
       {
         userAgent: ['Applebot', 'Bingbot'],

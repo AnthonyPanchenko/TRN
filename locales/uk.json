@@ -2,7 +2,8 @@
     "Navigation": {
         "home": "Головна",
         "contacts": "Контакти",
-        "articles": "Статті"
+        "articles": "Статті",
+        "dashboard": "Адмінка"
     },
     "Home": {
         "title": "Головна"
@@ -12,6 +13,9 @@
     },
     "Contacts": {
         "title": "Контакти"
+    },
+    "Dashboard": {
+        "title": "Адмінка"
     },
     "Manifest": {
         "title": "Заголовок"
