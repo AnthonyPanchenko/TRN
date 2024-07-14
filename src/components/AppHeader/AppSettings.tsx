@@ -15,8 +15,8 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState, useTransition } from 'react';
 import { LuSettings2 } from 'react-icons/lu';
 
-import { locales } from '../config';
-import { usePathname, useRouter } from '../navigation';
+import { locales } from '../../config';
+import { usePathname, useRouter } from '../../navigation';
 
 enum ThemeModes {
   LIGHT = 'light',

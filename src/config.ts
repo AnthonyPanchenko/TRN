@@ -33,6 +33,6 @@ export const localePrefix: LocalePrefix<typeof locales> = 'always';
 
 export const port = process.env.PORT || 3000;
 
-export const appName = 'Cyberantis';
+export const appName = 'TRN';
 
 export const host = `https://localhost:${port}`;

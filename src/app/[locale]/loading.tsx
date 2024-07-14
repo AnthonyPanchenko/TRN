@@ -1,5 +1,9 @@
+import { Spinner } from "@nextui-org/react";
+
 export default function Loading() {
   return (
-    <p>Loading global...</p>
+    <div className="flex items-center justify-center">
+      <Spinner label="Primary" color="primary" labelColor="primary" />
+    </div>
   );
 }

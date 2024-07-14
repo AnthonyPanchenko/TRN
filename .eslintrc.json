@@ -165,7 +165,8 @@
     "max-len": [
       "error",
       {
-        "code": 190
+        "code": 190,
+        "ignorePattern": "^\\s*className=\\"
       }
     ],
     "react/jsx-max-props-per-line": [

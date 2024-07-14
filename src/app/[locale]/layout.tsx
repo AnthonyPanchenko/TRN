@@ -6,6 +6,7 @@ import './styles.scss';
 
 import BaseAppTemplate from '../../components/BaseAppTemplate';
 import type { AppLayoutProps } from '../../types/common';
+import { cn } from '../../utils/cn';
 import ClientProviders from '../ClientProviders';
 
 const nunito = Nunito({ subsets: ['cyrillic'] });
@@ -17,7 +18,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html suppressHydrationWarning lang={params.locale as string}>
+    <html suppressHydrationWarning className="h-full" lang={params.locale as string}>
       <head>
         <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
         <link
@@ -53,11 +54,16 @@ export default async function RootLayout({
         <meta content="/assets/browserconfig.xml" name="msapplication-config" />
         <meta content="#09090b" name="theme-color" />
       </head>
-      <body className={nunito.className}>
+      <body
+        className={cn(
+          'flex flex-col h-full justify-between',
+          nunito.className
+        )}
+      >
         <NextIntlClientProvider messages={messages}>
           <ClientProviders>
             <BaseAppTemplate params={params}>
-                {children}
+              {children}
             </BaseAppTemplate>
           </ClientProviders>
         </NextIntlClientProvider>

@@ -1,8 +1,8 @@
 import './styles.scss';
 
-import { appName } from '../config';
 import type { AppLayoutProps } from '../types/common';
-import Navigation from './Navigation';
+import AppHeader from './AppHeader';
+import Footer from './Footer';
 
 export default function BaseAppTemplate({
   children,
@@ -10,12 +10,10 @@ export default function BaseAppTemplate({
   return (
     <>
       <header>
-        <Navigation />
+        <AppHeader />
       </header>
       {children}
-      <footer className="footer">
-        © Copyright {new Date().getFullYear()} {appName}.
-      </footer>
+      <Footer />
     </>
   );
 }

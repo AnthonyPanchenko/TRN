@@ -1,6 +1,8 @@
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 
+import SubscribeForm from '../../../components/SubscribeForm';
+
 export default function Home() {
   const t = useTranslations('Home');
 
@@ -16,6 +18,7 @@ export default function Home() {
         <article>
           <h1>{t('title')}</h1>
         </article>
+        <SubscribeForm />
       </main>
     </>
   );
