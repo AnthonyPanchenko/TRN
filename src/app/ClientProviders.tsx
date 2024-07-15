@@ -11,7 +11,11 @@ export default function ClientProviders({ children }: { children: React.ReactNod
   return (
     <SessionProvider>
       <NextUIProvider navigate={router.push}>
-        <NextThemesProvider enableSystem attribute="class" defaultTheme="system">
+        <NextThemesProvider
+          enableSystem
+          attribute="class"
+          defaultTheme="system"
+        >
           {children}
         </NextThemesProvider>
       </NextUIProvider>

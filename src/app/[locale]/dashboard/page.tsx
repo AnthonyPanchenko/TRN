@@ -5,7 +5,7 @@ const DashboardApp = dynamic(() => import('../../../DashboardApp'), {
   loading: () => <p>Loading DashboardApp...</p>,
 });
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
     <main className="some">
       <DashboardApp />

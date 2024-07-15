@@ -7,13 +7,11 @@ export default function Footer() {
         aria-hidden="true"
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
       >
-        <div
-          className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
-        />
+        <div className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30" />
       </div>
-      <p className="text-sm text-center text-gray-900">
+      <p className="text-center text-sm text-gray-900">
         © {new Date().getFullYear()} <strong className="font-semibold">{appName}</strong>. All rights reserved.
       </p>
     </footer>
-  )
+  );
 }

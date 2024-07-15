@@ -32,7 +32,6 @@
 //   </form>
 // </Container>
 
-
 //   Subscribe to our newsletter
 // Receive weekly updates with the newest insights, trends, and tools, straight to your email.
 
@@ -46,7 +45,7 @@ const SubscribeForm = () => (
             Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt dolore.
           </p>
           <div className="mt-6 flex max-w-md gap-x-4">
-            <label className="sr-only" htmlFor="email-address">Email address</label>
+            <label className="sr-only">Email address</label>
             <input
               required
               autoComplete="email"
@@ -56,7 +55,12 @@ const SubscribeForm = () => (
               placeholder="Enter your email"
               type="email"
             />
-            <button className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" type="submit">Subscribe</button>
+            <button
+              className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              type="submit"
+            >
+              Subscribe
+            </button>
           </div>
         </div>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
@@ -64,13 +68,17 @@ const SubscribeForm = () => (
             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
               <svg
                 aria-hidden="true"
-                className="h-6 w-6 text-white"
+                className="size-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
                 viewBox="0 0 24 24"
               >
-                <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
             <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
@@ -82,7 +90,7 @@ const SubscribeForm = () => (
             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
               <svg
                 aria-hidden="true"
-                className="h-6 w-6 text-white"
+                className="size-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.5"
@@ -103,7 +111,10 @@ const SubscribeForm = () => (
         </dl>
       </div>
     </div>
-    <div aria-hidden="true" className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6">
+    <div
+      aria-hidden="true"
+      className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
+    >
       <div className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30" />
     </div>
   </div>

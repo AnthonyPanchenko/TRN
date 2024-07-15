@@ -21,11 +21,19 @@ export const pathnames: Pathnames<typeof locales> = {
   },
   '/contacts': {
     [LocaleCodes.EN]: '/contacts',
-    [LocaleCodes.UK]: '/contacts'
+    [LocaleCodes.UK]: '/contacts',
+  },
+  '/signin': {
+    [LocaleCodes.EN]: '/signin',
+    [LocaleCodes.UK]: '/signin',
+  },
+  '/signup': {
+    [LocaleCodes.EN]: '/signup',
+    [LocaleCodes.UK]: '/signup',
   },
   '/dashboard': {
     [LocaleCodes.EN]: '/dashboard',
-    [LocaleCodes.UK]: '/dashboard'
+    [LocaleCodes.UK]: '/dashboard',
   },
 };
 

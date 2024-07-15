@@ -1,14 +1,12 @@
 import createMiddleware from 'next-intl/middleware';
 
-import {
-  localePrefix, defaultLocale, locales, pathnames
-} from './config';
+import { localePrefix, defaultLocale, locales, pathnames } from './config';
 
 export default createMiddleware({
   defaultLocale,
   locales,
   localePrefix,
-  pathnames
+  pathnames,
 });
 
 export const config = {
@@ -22,6 +20,6 @@ export const config = {
 
     // Enable redirects that add missing locales
     // (e.g. `/pathnames` -> `/en/pathnames`)
-    '/((?!_next|_vercel|.*\\..*).*)'
-  ]
+    '/((?!_next|_vercel|.*\\..*).*)',
+  ],
 };

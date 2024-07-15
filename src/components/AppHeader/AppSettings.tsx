@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownSection,
-  DropdownTrigger
-} from '@nextui-org/react';
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger } from '@nextui-org/react';
 import type { PressEvent } from '@react-types/shared';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
@@ -71,7 +64,8 @@ export default function AppSettings() {
       showArrow
       classNames={{
         base: 'before:bg-default-200', // change arrow background
-        content: 'py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black',
+        content:
+          'py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black',
       }}
     >
       <DropdownTrigger>
@@ -84,8 +78,14 @@ export default function AppSettings() {
           <LuSettings2 />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Dropdown menu with description" variant="faded">
-        <DropdownSection showDivider title="Theme">
+      <DropdownMenu
+        aria-label="Dropdown menu with description"
+        variant="faded"
+      >
+        <DropdownSection
+          showDivider
+          title="Theme"
+        >
           {themeModes.map((mode) => (
             <DropdownItem
               key={mode}

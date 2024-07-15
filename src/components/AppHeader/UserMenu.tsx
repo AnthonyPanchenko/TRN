@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  Avatar,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger
-} from '@nextui-org/react';
+import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
 
 export default function UserMenu() {
   return (
@@ -22,12 +16,21 @@ export default function UserMenu() {
           src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
         />
       </DropdownTrigger>
-      <DropdownMenu aria-label="Profile Actions" variant="flat">
-        <DropdownItem className="h-14 gap-2" key="profile">
+      <DropdownMenu
+        aria-label="Profile Actions"
+        variant="flat"
+      >
+        <DropdownItem
+          className="h-14 gap-2"
+          key="profile"
+        >
           <p className="font-semibold">Signed in as</p>
           <p className="font-semibold">zoey@example.com</p>
         </DropdownItem>
-        <DropdownItem color="danger" key="logout">
+        <DropdownItem
+          color="danger"
+          key="logout"
+        >
           Log Out
         </DropdownItem>
       </DropdownMenu>

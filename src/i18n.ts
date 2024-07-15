@@ -9,7 +9,7 @@ export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as LocaleCodes)) notFound();
 
-  const translations = await import(`../locales/${locale}.json`) as { default: AbstractIntlMessages };
+  const translations = (await import(`../locales/${locale}.json`)) as { default: AbstractIntlMessages };
 
   const data: Omit<IntlConfig, 'locale'> = {
     messages: translations.default,
@@ -18,21 +18,21 @@ export default getRequestConfig(async ({ locale }) => {
         short: {
           day: 'numeric',
           month: 'short',
-          year: 'numeric'
-        }
+          year: 'numeric',
+        },
       },
       number: {
         precise: {
-          maximumFractionDigits: 2
-        }
+          maximumFractionDigits: 2,
+        },
       },
       list: {
         enumeration: {
           style: 'long',
-          type: 'conjunction'
-        }
-      }
-    }
+          type: 'conjunction',
+        },
+      },
+    },
   };
 
   return data;

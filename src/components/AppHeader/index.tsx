@@ -1,16 +1,10 @@
-import {
-  Button,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem
-} from '@nextui-org/react';
+import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
 import { appName } from '../../config';
-import NavigationLink from "../NavigationLink";
+import NavigationLink from '../NavigationLink';
 import AppLogo from './AppLogo';
-import AppSettings from "./AppSettings";
+import AppSettings from './AppSettings';
 import UserMenu from './UserMenu';
 
 export default function AppHeader() {
@@ -23,7 +17,10 @@ export default function AppHeader() {
         <p className="font-bold text-inherit">{appName}</p>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent
+        className="hidden gap-4 sm:flex"
+        justify="center"
+      >
         <NavbarItem>
           <NavigationLink href="/">{t('home')}</NavigationLink>
         </NavbarItem>
@@ -38,10 +35,18 @@ export default function AppHeader() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent as="div" justify="end">
+      <NavbarContent
+        as="div"
+        justify="end"
+      >
         <AppSettings />
         <UserMenu />
-        <Button color="primary" variant="bordered">
+        <Button
+          as={NavigationLink}
+          color="primary"
+          href="/auth"
+          variant="bordered"
+        >
           Sign In
         </Button>
       </NavbarContent>

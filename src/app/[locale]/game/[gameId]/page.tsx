@@ -1,4 +1,4 @@
-export default function GameOverview() {
+export default function GameOverviewPage() {
   return (
     <main className="some">
       <article>

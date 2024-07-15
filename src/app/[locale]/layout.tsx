@@ -11,16 +11,21 @@ import ClientProviders from '../ClientProviders';
 
 const nunito = Nunito({ subsets: ['cyrillic'] });
 
-export default async function RootLayout({
-  children,
-  params
-}: AppLayoutProps) {
+export default async function RootLayout({ children, auth, params }: AppLayoutProps) {
   const messages = await getMessages();
 
   return (
-    <html suppressHydrationWarning className="h-full" lang={params.locale as string}>
+    <html
+      suppressHydrationWarning
+      className="h-full"
+      lang={params.locale as string}
+    >
       <head>
-        <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+        <link
+          href="/assets/apple-touch-icon.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
+        />
         <link
           href="/assets/favicon-32x32.png"
           rel="icon"
@@ -45,25 +50,46 @@ export default async function RootLayout({
           sizes="16x16"
           type="image/png"
         />
-        <link href="/assets/site.webmanifest" rel="manifest" />
-        <link color="#09090b" href="/assets/safari-pinned-tab.svg" rel="mask-icon" />
-        <link href="/assets/favicon.ico" rel="shortcut icon" />
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-        <meta content="#09090b" name="msapplication-TileColor" />
-        <meta content="/assets/mstile-144x144.png" name="msapplication-TileImage" />
-        <meta content="/assets/browserconfig.xml" name="msapplication-config" />
-        <meta content="#09090b" name="theme-color" />
+        <link
+          href="/assets/site.webmanifest"
+          rel="manifest"
+        />
+        <link
+          color="#09090b"
+          href="/assets/safari-pinned-tab.svg"
+          rel="mask-icon"
+        />
+        <link
+          href="/assets/favicon.ico"
+          rel="shortcut icon"
+        />
+        <meta
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name="viewport"
+        />
+        <meta
+          content="#09090b"
+          name="msapplication-TileColor"
+        />
+        <meta
+          content="/assets/mstile-144x144.png"
+          name="msapplication-TileImage"
+        />
+        <meta
+          content="/assets/browserconfig.xml"
+          name="msapplication-config"
+        />
+        <meta
+          content="#09090b"
+          name="theme-color"
+        />
       </head>
-      <body
-        className={cn(
-          'flex flex-col h-full justify-between',
-          nunito.className
-        )}
-      >
+      <body className={cn('flex flex-col h-full justify-between', nunito.className)}>
         <NextIntlClientProvider messages={messages}>
           <ClientProviders>
             <BaseAppTemplate params={params}>
               {children}
+              {auth}
             </BaseAppTemplate>
           </ClientProviders>
         </NextIntlClientProvider>
