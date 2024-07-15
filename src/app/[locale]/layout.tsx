@@ -11,7 +11,7 @@ import ClientProviders from '../ClientProviders';
 
 const nunito = Nunito({ subsets: ['cyrillic'] });
 
-export default async function RootLayout({ children, auth, params }: AppLayoutProps) {
+export default async function RootLayout({ children, modal, params }: AppLayoutProps) {
   const messages = await getMessages();
 
   return (
@@ -89,7 +89,7 @@ export default async function RootLayout({ children, auth, params }: AppLayoutPr
           <ClientProviders>
             <BaseAppTemplate params={params}>
               {children}
-              {auth}
+              {modal}
             </BaseAppTemplate>
           </ClientProviders>
         </NextIntlClientProvider>

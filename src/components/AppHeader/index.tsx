@@ -44,7 +44,7 @@ export default function AppHeader() {
         <Button
           as={NavigationLink}
           color="primary"
-          href="/auth"
+          href="/signin"
           variant="bordered"
         >
           Sign In

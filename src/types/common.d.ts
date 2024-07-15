@@ -12,7 +12,7 @@ export interface AppPageProps<TParams = undefined, TSearchParams = undefined> {
 export interface AppLayoutProps<TParams = undefined> {
   params: RouteParams<TParams>;
   children?: React.ReactNode;
-  auth?: React.ReactNode;
+  modal?: React.ReactNode;
 }
 
 export type ModalWindowBaseProps = {

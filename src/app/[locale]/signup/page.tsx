@@ -1,5 +1,10 @@
-import SignUpModal from '../../../components/SignUpModal';
+import SignUpForm from '../../../components/SignUpForm';
 
 export default function SignUpPage() {
-  return <SignUpModal isOpen />;
+  return (
+    <div>
+      <h2>Page SignUpForm</h2>
+      <SignUpForm />
+    </div>
+  );
 }
