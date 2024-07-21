@@ -20,12 +20,10 @@ export default function HomePage() {
         />
         {/* <link href="/favicon.ico" rel="icon" /> */}
       </Head>
-      <main>
-        <article>
-          <h1>{t('title')}</h1>
-        </article>
-        <SubscribeForm />
-      </main>
+      <article>
+        <h1>{t('title')}</h1>
+      </article>
+      <SubscribeForm />
     </>
   );
 }

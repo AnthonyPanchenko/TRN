@@ -1,10 +1,10 @@
 import SignUpForm from '../../../../components/SignUpForm';
-import BaseModal from '../../../../ui/Modal';
+import ModalContainer from '../../../../ui/ModalContainer';
 
 export default function SignUpPage() {
   return (
-    <BaseModal isOpen>
+    <ModalContainer isOpen>
       <SignUpForm />
-    </BaseModal>
+    </ModalContainer>
   );
 }

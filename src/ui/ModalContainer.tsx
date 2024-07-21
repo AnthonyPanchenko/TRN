@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import type { ModalWindowBaseProps } from '../types/common';
 
-const BaseModal = ({ children, isOpen }: React.PropsWithChildren & ModalWindowBaseProps) => {
+const ModalContainer = ({ children, isOpen }: React.PropsWithChildren & ModalWindowBaseProps) => {
   const router = useRouter();
   // const previousUrl = useRef<string>('/');
 
@@ -28,4 +28,4 @@ const BaseModal = ({ children, isOpen }: React.PropsWithChildren & ModalWindowBa
   );
 };
 
-export default BaseModal;
+export default ModalContainer;

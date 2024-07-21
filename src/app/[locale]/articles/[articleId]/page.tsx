@@ -1,9 +1,9 @@
 export default function Article() {
   return (
-    <main className="some">
+    <div className="some">
       <article>
         <h1>Article</h1>
       </article>
-    </main>
+    </div>
   );
 }

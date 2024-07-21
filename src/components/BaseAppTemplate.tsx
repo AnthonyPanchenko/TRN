@@ -6,10 +6,8 @@ import './styles.scss';
 export default function BaseAppTemplate({ children }: AppLayoutProps) {
   return (
     <>
-      <header>
-        <AppHeader />
-      </header>
-      {children}
+      <AppHeader />
+      <main className="mb-auto">{children}</main>
       <Footer />
     </>
   );

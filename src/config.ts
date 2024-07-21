@@ -9,31 +9,31 @@ export const pathnames: Pathnames<typeof locales> = {
   '/': '/',
   '/game/[gameId]': {
     [LocaleCodes.EN]: '/game/[gameId]',
-    [LocaleCodes.UK]: '/game/[gameId]',
+    [LocaleCodes.UA]: '/game/[gameId]',
   },
   '/articles': {
     [LocaleCodes.EN]: '/articles',
-    [LocaleCodes.UK]: '/articles',
+    [LocaleCodes.UA]: '/articles',
   },
   '/articles/[articleId]': {
     [LocaleCodes.EN]: '/articles/[articleId]',
-    [LocaleCodes.UK]: '/articles/[articleId]',
+    [LocaleCodes.UA]: '/articles/[articleId]',
   },
   '/contacts': {
     [LocaleCodes.EN]: '/contacts',
-    [LocaleCodes.UK]: '/contacts',
+    [LocaleCodes.UA]: '/contacts',
   },
   '/signin': {
     [LocaleCodes.EN]: '/signin',
-    [LocaleCodes.UK]: '/signin',
+    [LocaleCodes.UA]: '/signin',
   },
   '/signup': {
     [LocaleCodes.EN]: '/signup',
-    [LocaleCodes.UK]: '/signup',
+    [LocaleCodes.UA]: '/signup',
   },
   '/dashboard': {
     [LocaleCodes.EN]: '/dashboard',
-    [LocaleCodes.UK]: '/dashboard',
+    [LocaleCodes.UA]: '/dashboard',
   },
 };
 

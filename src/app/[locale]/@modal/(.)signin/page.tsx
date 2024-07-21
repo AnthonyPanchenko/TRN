@@ -1,10 +1,10 @@
 import SignInForm from '../../../../components/SignInForm';
-import BaseModal from '../../../../ui/Modal';
+import ModalContainer from '../../../../ui/ModalContainer';
 
 export default function SignInPage() {
   return (
-    <BaseModal isOpen>
+    <ModalContainer isOpen>
       <SignInForm />
-    </BaseModal>
+    </ModalContainer>
   );
 }

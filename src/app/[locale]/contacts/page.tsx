@@ -6,10 +6,10 @@ export default function ContactsPage() {
   const t = useTranslations('Contacts');
 
   return (
-    <main className={styles.contacts}>
+    <div className={styles.contacts}>
       <article>
         <h1>{t('title')}</h1>
       </article>
-    </main>
+    </div>
   );
 }

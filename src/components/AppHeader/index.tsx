@@ -11,45 +11,57 @@ export default function AppHeader() {
   const t = useTranslations('Navigation');
 
   return (
-    <Navbar>
-      <NavbarBrand>
-        <AppLogo />
-        <p className="font-bold text-inherit">{appName}</p>
-      </NavbarBrand>
+    <header>
+      <Navbar>
+        <NavbarBrand>
+          <AppLogo />
+          <p className="font-bold text-inherit">{appName}</p>
+        </NavbarBrand>
 
-      <NavbarContent
-        className="hidden gap-4 sm:flex"
-        justify="center"
-      >
-        <NavbarItem>
-          <NavigationLink href="/">{t('home')}</NavigationLink>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <NavigationLink href="/articles">{t('articles')}</NavigationLink>
-        </NavbarItem>
-        <NavbarItem>
-          <NavigationLink href="/contacts">{t('contacts')}</NavigationLink>
-        </NavbarItem>
-        <NavbarItem>
-          <NavigationLink href="/dashboard">{t('dashboard')}</NavigationLink>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent
-        as="div"
-        justify="end"
-      >
-        <AppSettings />
-        <UserMenu />
-        <Button
-          as={NavigationLink}
-          color="primary"
-          href="/signin"
-          variant="bordered"
+        <NavbarContent
+          className="hidden gap-4 sm:flex"
+          justify="center"
         >
-          Sign In
-        </Button>
-      </NavbarContent>
-    </Navbar>
+          <NavbarItem>
+            <NavigationLink href="/">{t('home')}</NavigationLink>
+          </NavbarItem>
+          <NavbarItem isActive>
+            <NavigationLink href="/articles">{t('articles')}</NavigationLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavigationLink href="/contacts">{t('contacts')}</NavigationLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NavigationLink href="/dashboard">{t('dashboard')}</NavigationLink>
+          </NavbarItem>
+        </NavbarContent>
+
+        <NavbarContent
+          as="div"
+          justify="end"
+        >
+          <AppSettings />
+          <UserMenu />
+          <Button
+            as={NavigationLink}
+            color="primary"
+            href="/signin"
+            size="sm"
+            variant="bordered"
+          >
+            Sign In
+          </Button>
+          <Button
+            as={NavigationLink}
+            color="secondary"
+            href="/signup"
+            size="sm"
+            variant="bordered"
+          >
+            Sign Up
+          </Button>
+        </NavbarContent>
+      </Navbar>
+    </header>
   );
 }

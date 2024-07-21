@@ -10,7 +10,10 @@ export default function ClientProviders({ children }: { children: React.ReactNod
 
   return (
     <SessionProvider>
-      <NextUIProvider navigate={router.push}>
+      <NextUIProvider
+        className="flex min-h-screen flex-col justify-between"
+        navigate={router.push}
+      >
         <NextThemesProvider
           enableSystem
           attribute="class"

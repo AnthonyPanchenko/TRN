@@ -20,8 +20,13 @@
     "Manifest": {
         "title": "Title"
     },
-    "LocaleSwitcher": {
+    "languages": {
         "en": "English",
-        "uk": "Ukrainian"
+        "ua": "Ukrainian"
+    },
+    "theme": {
+        "light": "Light",
+        "system": "System",
+        "dark": "Dark"
     }
 }

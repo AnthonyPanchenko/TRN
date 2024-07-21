@@ -6,7 +6,6 @@ import './styles.scss';
 
 import BaseAppTemplate from '../../components/BaseAppTemplate';
 import type { AppLayoutProps } from '../../types/common';
-import { cn } from '../../utils/cn';
 import ClientProviders from '../ClientProviders';
 
 const nunito = Nunito({ subsets: ['cyrillic'] });
@@ -17,7 +16,6 @@ export default async function RootLayout({ children, modal, params }: AppLayoutP
   return (
     <html
       suppressHydrationWarning
-      className="h-full"
       lang={params.locale as string}
     >
       <head>
@@ -84,7 +82,7 @@ export default async function RootLayout({ children, modal, params }: AppLayoutP
           name="theme-color"
         />
       </head>
-      <body className={cn('flex flex-col h-full justify-between', nunito.className)}>
+      <body className={nunito.className}>
         <NextIntlClientProvider messages={messages}>
           <ClientProviders>
             <BaseAppTemplate params={params}>

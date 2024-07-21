@@ -9,7 +9,7 @@ export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as LocaleCodes)) notFound();
 
-  const translations = (await import(`../locales/${locale}.json`)) as { default: AbstractIntlMessages };
+  const translations = (await import(`../messages/${locale}.json`)) as { default: AbstractIntlMessages };
 
   const data: Omit<IntlConfig, 'locale'> = {
     messages: translations.default,

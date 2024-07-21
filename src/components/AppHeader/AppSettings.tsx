@@ -5,11 +5,11 @@ import type { PressEvent } from '@react-types/shared';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useParams } from 'next/navigation';
-import { useEffect, useState, useTransition } from 'react';
-import { LuSettings2 } from 'react-icons/lu';
+import { useTransition } from 'react';
 
-import { locales } from '../../config';
+import { LocaleCodes } from '../../constants/localization';
 import { usePathname, useRouter } from '../../navigation';
+import { AppSettingsIcon, LaptopSystemIcon, MoonIcon, SunIcon, EnglishFlagIcon, UkraineFlagIcon } from './icons';
 
 enum ThemeModes {
   LIGHT = 'light',
@@ -17,46 +17,50 @@ enum ThemeModes {
   DARK = 'dark',
 }
 
-const themeModes = Object.values(ThemeModes);
+const themeModeOptions = [
+  { id: ThemeModes.LIGHT, Icon: SunIcon },
+  { id: ThemeModes.SYSTEM, Icon: LaptopSystemIcon },
+  { id: ThemeModes.DARK, Icon: MoonIcon },
+];
+
+const languageOptions = [
+  { id: LocaleCodes.EN, Icon: EnglishFlagIcon },
+  { id: LocaleCodes.UA, Icon: UkraineFlagIcon },
+];
 
 export default function AppSettings() {
-  const iconClasses = 'text-xl text-default-500 pointer-events-none flex-shrink-0';
-  const [currentTheme, setCurrentTheme] = useState<ThemeModes | string>();
+  const t = useTranslations();
+
   const { theme, setTheme } = useTheme();
 
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
-
-  const t = useTranslations('LocaleSwitcher');
   const locale = useLocale();
-
-  useEffect(() => {
-    if (theme) {
-      setCurrentTheme(theme);
-    }
-  }, [theme]);
+  const [_isPending, startTransition] = useTransition();
 
   const handleChangeLanguage = (event: PressEvent) => {
-    console.log(event);
-    // const nextLocale = event.target.value;
-    // startTransition(() => {
-    //   router.replace(
-    //     // @ts-expect-error -- TypeScript will validate that only known `params`
-    //     // are used in combination with a given `pathname`. Since the two will
-    //     // always match for the current route, we can skip runtime checks.
-    //     { pathname, params },
-    //     { locale: nextLocale }
-    //   );
-    // });
+    const value = (event.target as HTMLElement).dataset.key;
+
+    if (value) {
+      startTransition(() => {
+        router.replace(
+          // @ts-expect-error -- TypeScript will validate that only known `params`
+          // are used in combination with a given `pathname`. Since the two will
+          // always match for the current route, we can skip runtime checks.
+          { pathname, params },
+          { locale: value },
+        );
+      });
+    }
   };
 
-  // if (!currentTheme) return null;
-
   const handleChangeTheme = (event: PressEvent) => {
-    console.log(event);
-    // setTheme('light')
+    const value = (event.target as HTMLElement).dataset.key;
+
+    if (value) {
+      setTheme(value);
+    }
   };
 
   return (
@@ -64,48 +68,45 @@ export default function AppSettings() {
       showArrow
       classNames={{
         base: 'before:bg-default-200', // change arrow background
-        content:
-          'py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black',
       }}
     >
       <DropdownTrigger>
         <Button
-          // variant="bordered"
           isIconOnly
-          aria-label="Like"
-          color="danger"
+          aria-label="App settings"
+          size="sm"
+          variant="bordered"
         >
-          <LuSettings2 />
+          <AppSettingsIcon />
         </Button>
       </DropdownTrigger>
       <DropdownMenu
-        aria-label="Dropdown menu with description"
+        aria-label="Dropdown menu App settings"
+        disabledKeys={[theme, locale] as Iterable<string>}
         variant="faded"
       >
         <DropdownSection
           showDivider
           title="Theme"
         >
-          {themeModes.map((mode) => (
+          {themeModeOptions.map(({ id, Icon }) => (
             <DropdownItem
-              key={mode}
-              // startContent={<AddNoteIcon className={iconClasses} />}
-              shortcut="⌘⇧D"
+              key={id}
+              startContent={<Icon />}
               onPress={handleChangeTheme}
             >
-              {mode}
+              {t(`theme.${id}`)}
             </DropdownItem>
           ))}
         </DropdownSection>
         <DropdownSection title="Language">
-          {locales.map((cur) => (
+          {languageOptions.map(({ id, Icon }) => (
             <DropdownItem
-              key={cur}
-              // startContent={<AddNoteIcon className={iconClasses} />}
-              shortcut="⌘⇧E"
+              key={id}
+              startContent={<Icon />}
               onPress={handleChangeLanguage}
             >
-              {t(cur)}
+              {t(`languages.${id}`)}
             </DropdownItem>
           ))}
         </DropdownSection>

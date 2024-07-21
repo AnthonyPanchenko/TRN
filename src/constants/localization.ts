@@ -1,4 +1,4 @@
 export enum LocaleCodes {
-  UK = 'uk',
+  UA = 'ua',
   EN = 'en',
 }

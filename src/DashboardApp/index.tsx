@@ -2,9 +2,7 @@ import SubComponent from './SubComponent';
 
 const DashboardApp = () => (
   <div>
-    <main>
-      <SubComponent />
-    </main>
+    <SubComponent />
   </div>
 );
 

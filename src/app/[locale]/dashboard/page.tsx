@@ -7,8 +7,8 @@ const DashboardApp = dynamic(() => import('../../../DashboardApp'), {
 
 export default function DashboardPage() {
   return (
-    <main className="some">
+    <div className="some">
       <DashboardApp />
-    </main>
+    </div>
   );
 }

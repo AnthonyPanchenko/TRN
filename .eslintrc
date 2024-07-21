@@ -10,12 +10,7 @@
     "next/core-web-vitals",
     "plugin:prettier/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "import",
-    "unused-imports",
-    "tailwindcss"
-  ],
+  "plugins": ["@typescript-eslint", "import", "unused-imports", "tailwindcss"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -42,10 +37,7 @@
         "endOfLine": "auto"
       }
     ], // Avoid conflict rule between Prettier and Airbnb Eslint
-    "jsx-quotes": [
-      "error",
-      "prefer-double"
-    ],
+    "jsx-quotes": ["error", "prefer-double"],
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/restrict-plus-operands": "error",
@@ -69,12 +61,8 @@
       "error",
       {
         "selector": "parameter",
-        "modifiers": [
-          "unused"
-        ],
-        "format": [
-          "strictCamelCase"
-        ],
+        "modifiers": ["unused"],
+        "format": ["strictCamelCase"],
         "leadingUnderscore": "require"
       }
     ],
@@ -104,18 +92,9 @@
         "allowArrowFunctions": true
       }
     ],
-    "react/jsx-first-prop-new-line": [
-      "error",
-      "multiline-multiprop"
-    ],
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "react/jsx-indent-props": [
-      "error",
-      2
-    ],
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
     "react/jsx-key": "error",
     "react/jsx-tag-spacing": [
       "error",
@@ -142,10 +121,7 @@
     "react/no-array-index-key": "warn",
     "react/no-unused-prop-types": "warn",
     "no-unsafe-optional-chaining": "error",
-    "function-paren-newline": [
-      "error",
-      "multiline-arguments"
-    ],
+    "function-paren-newline": ["error", "multiline-arguments"],
     "import/extensions": "off", // Avoid missing file extension errors, TypeScript already provides a similar feature
     "react/function-component-definition": "off", // Disable Airbnb's specific function type
     "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
@@ -189,14 +165,8 @@
         }
       }
     ],
-    "no-restricted-syntax": [
-      "error",
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement"
-    ], // Overrides Airbnb configuration and enable no-restricted-syntax
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"], // Overrides Airbnb configuration and enable no-restricted-syntax
     "import/prefer-default-export": "off", // Named export is easier to refactor automatically
-    "unused-imports/no-unused-imports": "error",
     "prefer-const": "error",
     "prefer-destructuring": "error",
     "react-hooks/rules-of-hooks": "error",
@@ -204,19 +174,21 @@
     "import/order": [
       "warn",
       {
-        "groups": [
-          "external",
-          "internal"
-        ],
+        "groups": ["external", "internal"],
         "newlines-between": "always"
       }
     ],
+    "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
-      "error",
+      "warn",
       {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "tailwindcss/no-custom-classname": "off"
   }
   // Configuration for testing
   // {
