@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Nunito } from 'next/font/google';
+// import { Nunito } from 'next/font/google';
 import './globals.css';
 import './styles.scss';
 
@@ -8,7 +8,7 @@ import BaseAppTemplate from '../../components/BaseAppTemplate';
 import type { AppLayoutProps } from '../../types/common';
 import ClientProviders from '../ClientProviders';
 
-const nunito = Nunito({ subsets: ['cyrillic'] });
+// const nunito = Nunito({ subsets: ['cyrillic'] });
 
 export default async function RootLayout({ children, modal, params }: AppLayoutProps) {
   const messages = await getMessages();
@@ -82,9 +82,9 @@ export default async function RootLayout({ children, modal, params }: AppLayoutP
           name="theme-color"
         />
       </head>
-      <body className={nunito.className}>
+      <body>
         <NextIntlClientProvider messages={messages}>
-          <ClientProviders>
+          <ClientProviders locale={params.locale}>
             <BaseAppTemplate params={params}>
               {children}
               {modal}
